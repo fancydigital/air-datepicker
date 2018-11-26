@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     rename = require('gulp-rename'),
-    sass = require('gulp-sass'),
+    less = require('gulp-less'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer')({ browsers: ['last 2 versions'] }),
     clone = require('gulp-clone'),
@@ -8,9 +8,9 @@ var gulp = require('gulp'),
     concat = require('gulp-concat');
 
 module.exports = function () {
-    var stream = gulp.src('src/sass/*.scss')
+    var stream = gulp.src('src/less/*.scss')
         .pipe(concat('datepicker.scss'))
-        .pipe(sass().on('error', sass.logError))
+        .pipe(less())
         .pipe(postcss([autoprefixer]));
 
     stream.pipe(clone())

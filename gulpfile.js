@@ -13,7 +13,7 @@ gulp.task('gzip', require('./tasks/gzip'));
 gulp.task('watch', function () {
     livereload.listen();
 
-    gulp.watch('src/sass/*.scss', ['css']).on('change', function (file) {
+    gulp.watch('src/sass/*.less', ['css']).on('change', function (file) {
         livereload.changed(file)
     });
 
@@ -21,7 +21,7 @@ gulp.task('watch', function () {
         livereload.changed(file)
     });
 
-    gulp.watch('docs/sass/*.scss', ['cssPage']).on('change', function (file) {
+    gulp.watch('docs/sass/*.less', ['cssPage']).on('change', function (file) {
         livereload.changed(file)
     });
 
